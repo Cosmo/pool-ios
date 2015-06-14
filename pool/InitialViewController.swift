@@ -12,27 +12,21 @@ class InitialViewController: UIViewController {
     override func viewDidLoad() {
         var button1 = UIButton()
         var button2 = UIButton()
-        var button3 = UIButton()
         
         button1.setTitle("Login", forState: UIControlState.Normal)
         button2.setTitle("Activities", forState: UIControlState.Normal)
-        button3.setTitle("Scan", forState: UIControlState.Normal)
         
         button1.frame = CGRect(x: 0, y: 100, width: 100, height: 100)
         button2.frame = CGRect(x: 0, y: 200, width: 100, height: 100)
-        button3.frame = CGRect(x: 0, y: 300, width: 100, height: 100)
         
         button1.backgroundColor = UIColor.blueColor()
         button2.backgroundColor = UIColor.purpleColor()
-        button3.backgroundColor = UIColor.grayColor()
         
         button1.addTarget(self, action: "button1", forControlEvents: UIControlEvents.TouchUpInside)
         button2.addTarget(self, action: "button2", forControlEvents: UIControlEvents.TouchUpInside)
-        button3.addTarget(self, action: "button3", forControlEvents: UIControlEvents.TouchUpInside)
         
         self.view.addSubview(button1)
         self.view.addSubview(button2)
-        self.view.addSubview(button3)
     }
     
     func button1() {
@@ -43,10 +37,5 @@ class InitialViewController: UIViewController {
     func button2() {
         var viewController2 = ActivitiesViewController()
         self.navigationController?.pushViewController(viewController2, animated: true)
-    }
-    
-    func button3() {
-        var viewController3 = ScanViewController()
-        self.navigationController?.pushViewController(viewController3, animated: true)
     }
 }
