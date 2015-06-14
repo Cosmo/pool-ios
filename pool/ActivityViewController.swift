@@ -83,17 +83,32 @@ class ActivityViewController: UITableViewController {
         self.tableView.registerClass(ActivityUserViewCell.self, forCellReuseIdentifier: activityUserCell)
         self.tableView.registerClass(ActivityTransactionViewCell.self, forCellReuseIdentifier: activityTransactionCell)
         
+        self.navigationItem.rightBarButtonItems = [
+                UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addTransaction:"),
+                UIBarButtonItem(title: "Invite", style: UIBarButtonItemStyle.Plain, target: self, action: "addFriend:")
+        ]
+        
         if let id = _id {
             Activity.detail(id)?.success({ (data, response) -> () in
                 var stringData = NSString(data: data, encoding: NSUTF8StringEncoding)! as String
                 self.data <-- stringData
                 dispatch_async(dispatch_get_main_queue(), {
                     self.tableView.reloadData()
+                    self.title = self.data?.name
                 })
             }).failure({ (data, response, error) -> () in
                 println("failure")
             }).call()
         }
+        
+    }
+    
+    func addTransaction(sender: AnyObject) {
+        let viewController = UINavigationController(rootViewController: AddTransactionViewController())
+        self.presentViewController(viewController, animated: true, completion: nil)
+    }
+    
+    func addFriend(sender: AnyObject) {
         
     }
     
@@ -117,6 +132,17 @@ class ActivityViewController: UITableViewController {
             }
         default:
             return 0
+        }
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return "Friends"
+        case 1:
+            return "Transactions"
+        default:
+            return ""
         }
     }
     

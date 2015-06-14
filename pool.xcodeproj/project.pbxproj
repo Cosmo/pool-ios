@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4511B2191B2D3F940060375C /* AddTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4511B2181B2D3F940060375C /* AddTransactionViewController.swift */; };
 		451C39811B2CB94500391D7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C39801B2CB94500391D7E /* AppDelegate.swift */; };
 		451C39881B2CB94500391D7E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 451C39871B2CB94500391D7E /* Images.xcassets */; };
 		451C398B1B2CB94500391D7E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 451C39891B2CB94500391D7E /* LaunchScreen.xib */; };
@@ -26,7 +27,7 @@
 		451C39C31B2CDCBF00391D7E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C39BF1B2CDCBF00391D7E /* User.swift */; };
 		451C39C41B2CDCBF00391D7E /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C39C01B2CDCBF00391D7E /* Transaction.swift */; };
 		451C39C51B2CDCBF00391D7E /* Total.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C39C11B2CDCBF00391D7E /* Total.swift */; };
-		4BF7125A4BDDDE3D5FF20C12 /* libPods-pool.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9029C8AFB97110E3585244F /* libPods-pool.a */; };
+		99CF75A2ED61C0D4B61429AC /* Pods_pool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA6388233AA6100AF76D2756 /* Pods_pool.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		E98A987E1B2CF2A20068DEDD /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98A987D1B2CF2A20068DEDD /* ScanViewController.swift */; };
 		E98A98801B2CF2D00068DEDD /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E98A987F1B2CF2D00068DEDD /* CoreMedia.framework */; };
 		E98A98821B2CF2DA0068DEDD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E98A98811B2CF2DA0068DEDD /* AVFoundation.framework */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4511B2181B2D3F940060375C /* AddTransactionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTransactionViewController.swift; sourceTree = "<group>"; };
 		451C397B1B2CB94500391D7E /* pool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		451C397F1B2CB94500391D7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		451C39801B2CB94500391D7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -72,7 +74,6 @@
 		451C39C11B2CDCBF00391D7E /* Total.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Total.swift; sourceTree = "<group>"; };
 		781D44B46D49EED55A67C7A0 /* Pods-pool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pool.release.xcconfig"; path = "Pods/Target Support Files/Pods-pool/Pods-pool.release.xcconfig"; sourceTree = "<group>"; };
 		B10E80851AE0285A3614D3D8 /* Pods-pool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pool/Pods-pool.debug.xcconfig"; sourceTree = "<group>"; };
-		C9029C8AFB97110E3585244F /* libPods-pool.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-pool.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E98A987D1B2CF2A20068DEDD /* ScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
 		E98A987F1B2CF2D00068DEDD /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		E98A98811B2CF2DA0068DEDD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -81,6 +82,7 @@
 		E98A98871B2CF4CB0068DEDD /* GiniVision.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GiniVision.bundle; path = Frameworks/GiniVisionFramework/GiniVision.bundle; sourceTree = "<group>"; };
 		E98A98881B2CF4CB0068DEDD /* GiniVision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GiniVision.framework; path = Frameworks/GiniVisionFramework/GiniVision.framework; sourceTree = "<group>"; };
 		E98A98891B2CF4CB0068DEDD /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = Frameworks/GiniVisionFramework/opencv2.framework; sourceTree = "<group>"; };
+		FA6388233AA6100AF76D2756 /* Pods_pool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +95,7 @@
 				E98A98801B2CF2D00068DEDD /* CoreMedia.framework in Frameworks */,
 				E98A988C1B2CF4CC0068DEDD /* opencv2.framework in Frameworks */,
 				E98A988B1B2CF4CB0068DEDD /* GiniVision.framework in Frameworks */,
-				4BF7125A4BDDDE3D5FF20C12 /* libPods-pool.a in Frameworks */,
+				99CF75A2ED61C0D4B61429AC /* Pods_pool.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +116,21 @@
 				781D44B46D49EED55A67C7A0 /* Pods-pool.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		4511B2161B2D3EAA0060375C /* AddActivity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = AddActivity;
+			sourceTree = "<group>";
+		};
+		4511B2171B2D3EE00060375C /* AddTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				4511B2181B2D3F940060375C /* AddTransactionViewController.swift */,
+			);
+			name = AddTransaction;
 			sourceTree = "<group>";
 		};
 		451C39721B2CB94500391D7E = {
@@ -190,6 +207,8 @@
 		451C39A71B2CC0DF00391D7E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4511B2171B2D3EE00060375C /* AddTransaction */,
+				4511B2161B2D3EAA0060375C /* AddActivity */,
 				E98A987D1B2CF2A20068DEDD /* ScanViewController.swift */,
 				451C39AC1B2CC13800391D7E /* Activities */,
 				451C39AE1B2CC15000391D7E /* Invite */,
@@ -270,7 +289,7 @@
 		F4DBCEC6540A5CB4DD1D9D08 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C9029C8AFB97110E3585244F /* libPods-pool.a */,
+				FA6388233AA6100AF76D2756 /* Pods_pool.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -287,6 +306,7 @@
 				451C39781B2CB94500391D7E /* Frameworks */,
 				451C39791B2CB94500391D7E /* Resources */,
 				73E8CCBA4FE9D44330D03480 /* Copy Pods Resources */,
+				0E47F46613162EAE1C69B092 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -374,6 +394,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0E47F46613162EAE1C69B092 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-pool/Pods-pool-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		39BBC3AFE7CF0971E6BC701C /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -426,6 +461,7 @@
 				451C39A51B2CBA2400391D7E /* JSONHelper.swift in Sources */,
 				451C39811B2CB94500391D7E /* AppDelegate.swift in Sources */,
 				451C39C21B2CDCBF00391D7E /* Activity.swift in Sources */,
+				4511B2191B2D3F940060375C /* AddTransactionViewController.swift in Sources */,
 				451C39BA1B2CC70000391D7E /* TransactionViewCell.swift in Sources */,
 				451C39C41B2CDCBF00391D7E /* Transaction.swift in Sources */,
 			);

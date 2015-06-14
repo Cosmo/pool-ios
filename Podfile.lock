@@ -2,9 +2,11 @@ PODS:
   - Bolts (1.1.0)
   - Gini-iOS-SDK (0.0.1):
     - Bolts (= 1.1.0)
+  - XLForm (2.2.0)
 
 DEPENDENCIES:
   - Gini-iOS-SDK (from `https://github.com/gini/gini-sdk-ios.git`)
+  - XLForm
 
 EXTERNAL SOURCES:
   Gini-iOS-SDK:
@@ -18,5 +20,6 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Bolts: cbf2e714ee805a2a2c1fced24c6e3aae9fbc396e
   Gini-iOS-SDK: b9724c7772fb93517c962dfa631ffe5c0eadb2e9
+  XLForm: 799e61ef230f519914e722bf032b19a597223c19
 
 COCOAPODS: 0.37.2

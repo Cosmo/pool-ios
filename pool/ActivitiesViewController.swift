@@ -14,11 +14,11 @@ class ActivitiesViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Pool"
+        self.title = "Activities"
         
         self.tableView.registerClass(ActivityViewCell.self, forCellReuseIdentifier: activityCell)
         
-        println("hi")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: self, action: "addActivity:")
         
         Activity.all()?.success({ (data, response) -> () in
             var stringData = NSString(data: data, encoding: NSUTF8StringEncoding)! as String
@@ -29,6 +29,10 @@ class ActivitiesViewController: UITableViewController {
         }).failure({ (data, response, error) -> () in
             println("failure")
         }).call()
+    }
+    
+    func addActivity(sender: AnyObject) {
+        
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

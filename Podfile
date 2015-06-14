@@ -3,6 +3,8 @@
 
 target 'pool' do
   pod 'Gini-iOS-SDK', :git => "https://github.com/gini/gini-sdk-ios.git"
+  pod 'XLForm'
+  use_frameworks!
 end
 
 target 'poolTests' do
