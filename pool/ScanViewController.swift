@@ -9,6 +9,7 @@
 import UIKit
 
 class ScanViewController: UIViewController, GiniVisionDelegate {
+    let sdk = (UIApplication.sharedApplication().delegate as! AppDelegate).giniSDK
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,8 @@ class ScanViewController: UIViewController, GiniVisionDelegate {
         // navigationBar
         self.navigationController?.navigationBar.barStyle = UIBarStyle.BlackTranslucent
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Scan", style: UIBarButtonItemStyle.Plain, target: self, action: "rightBarButtonAction:")
+        
+        self.sdk.sessionManager.getSession()
     }
     
     func rightBarButtonAction(button: UIBarButtonItem) {
@@ -33,8 +36,28 @@ class ScanViewController: UIViewController, GiniVisionDelegate {
     
     // gini delegates
     func didScan(document: UIImage!, documentType docType: GINIDocumentType, uploadDelegate delegate: GINIVisionUploadDelegate!) {
-        println("didScan")
-        delegate.didEndUpload()
+        println("didScan:")
+        
+        let manager = self.sdk.documentTaskManager
+        self.sdk.sessionManager.getSession().continueWithSuccessBlock { (task: BFTask!) -> AnyObject! in
+            println("didScan:task")
+            return manager.createDocumentWithFilename("new-document", fromImage: document)
+        }.continueWithSuccessBlock { (createTask: BFTask!) -> AnyObject! in
+            println("didScan:createTask")
+            let document: AnyObject! = createTask.result()
+            return document.extractions
+        }.continueWithSuccessBlock { (extractionsTask: BFTask!) -> AnyObject! in
+            println("didScan:extractionsTask")
+            let extractions: AnyObject! = extractionsTask.result()
+            
+            println("didScan:extractions: \(extractions)")
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                delegate.didEndUpload()
+            })
+            
+            return nil
+        }
     }
     
     func didScanOriginal(image: UIImage!) {
