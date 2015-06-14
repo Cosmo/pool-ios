@@ -21,7 +21,6 @@
 		451C39B41B2CC57700391D7E /* InviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C39B31B2CC57700391D7E /* InviteViewController.swift */; };
 		451C39B61B2CC69D00391D7E /* ActivityViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C39B51B2CC69D00391D7E /* ActivityViewCell.swift */; };
 		451C39B81B2CC6CD00391D7E /* InviteUserViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C39B71B2CC6CD00391D7E /* InviteUserViewCell.swift */; };
-		451C39BA1B2CC70000391D7E /* TransactionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C39B91B2CC70000391D7E /* TransactionViewCell.swift */; };
 		451C39BC1B2CC76E00391D7E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C39BB1B2CC76E00391D7E /* LoginViewController.swift */; };
 		451C39C21B2CDCBF00391D7E /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C39BE1B2CDCBF00391D7E /* Activity.swift */; };
 		451C39C31B2CDCBF00391D7E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C39BF1B2CDCBF00391D7E /* User.swift */; };
@@ -68,7 +67,6 @@
 		451C39B31B2CC57700391D7E /* InviteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteViewController.swift; sourceTree = "<group>"; };
 		451C39B51B2CC69D00391D7E /* ActivityViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewCell.swift; sourceTree = "<group>"; };
 		451C39B71B2CC6CD00391D7E /* InviteUserViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteUserViewCell.swift; sourceTree = "<group>"; };
-		451C39B91B2CC70000391D7E /* TransactionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionViewCell.swift; sourceTree = "<group>"; };
 		451C39BB1B2CC76E00391D7E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		451C39BE1B2CDCBF00391D7E /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		451C39BF1B2CDCBF00391D7E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -254,7 +252,6 @@
 			isa = PBXGroup;
 			children = (
 				451C39AF1B2CC46400391D7E /* ActivityViewController.swift */,
-				451C39B91B2CC70000391D7E /* TransactionViewCell.swift */,
 			);
 			name = Activity;
 			sourceTree = "<group>";
@@ -470,7 +467,6 @@
 				451C39811B2CB94500391D7E /* AppDelegate.swift in Sources */,
 				451C39C21B2CDCBF00391D7E /* Activity.swift in Sources */,
 				4511B2191B2D3F940060375C /* AddTransactionViewController.swift in Sources */,
-				451C39BA1B2CC70000391D7E /* TransactionViewCell.swift in Sources */,
 				451C39C41B2CDCBF00391D7E /* Transaction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

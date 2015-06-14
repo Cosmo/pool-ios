@@ -12,13 +12,15 @@ struct Transaction: Deserializable {
     var amount:     Int?
     var fee:        Int?
     var currency:   String?
-    var user:       User?
+    var user:       String?
+    var name:       String?
     
     init(data: [String: AnyObject]) {
         amount    <-- data["amount"]
         fee       <-- data["fee"]
         currency  <-- data["currency"]
         user      <-- data["user"]
+        name      <-- data["name"]
     }
     
     static func new(id: String) -> Api? {

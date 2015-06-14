@@ -10,6 +10,8 @@ import UIKit
 
 class ActivityTransactionViewCell: UITableViewCell {
     var nameLabel:          UILabel
+    var userLabel:          UILabel
+    var amountLabel:        UILabel
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -17,10 +19,16 @@ class ActivityTransactionViewCell: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         self.nameLabel          = UILabel()
+        self.userLabel          = UILabel()
+        self.amountLabel          = UILabel()
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         self.contentView.addSubview(self.nameLabel)
+        self.contentView.addSubview(self.userLabel)
+        self.contentView.addSubview(self.amountLabel)
+        
+        self.amountLabel.textAlignment = NSTextAlignment.Right
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -30,12 +38,15 @@ class ActivityTransactionViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        self.nameLabel.frame        = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height)
+        self.nameLabel.frame        = CGRect(x: 15, y: 12, width: self.frame.size.width - 15 - 15, height: 16)
+        self.userLabel.frame        = CGRect(x: 15, y: 12+15+12, width: self.frame.size.width - 15 - 15, height: 16)
+        self.amountLabel.frame        = CGRect(x: 15, y: 12+15+12, width: self.frame.size.width - 15 - 15, height: 16)
     }
 }
 
 class ActivityUserViewCell: UITableViewCell {
     var nameLabel:          UILabel
+    var amountLabel:          UILabel
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -43,10 +54,14 @@ class ActivityUserViewCell: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         self.nameLabel          = UILabel()
+        self.amountLabel          = UILabel()
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         self.contentView.addSubview(self.nameLabel)
+        
+        self.amountLabel.textAlignment = NSTextAlignment.Right
+        self.contentView.addSubview(self.amountLabel)
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -56,9 +71,12 @@ class ActivityUserViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        self.nameLabel.frame        = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height)
+        self.nameLabel.frame        = CGRect(x: 15, y: 0, width: self.frame.size.width - 15 - 15, height: self.frame.size.height)
+        self.amountLabel.frame      = CGRect(x: 15, y: 0, width: self.frame.size.width - 15 - 15, height: self.frame.size.height)
     }
 }
+
+
 
 
 
@@ -141,6 +159,19 @@ class ActivityViewController: UITableViewController {
         }
     }
     
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        switch indexPath.section {
+        case 0:
+            return 44.0
+        case 1:
+            return 44.0
+        case 2:
+            return 68.0
+        default:
+            return 44.0
+        }
+    }
+    
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
@@ -179,7 +210,23 @@ class ActivityViewController: UITableViewController {
             var cell: ActivityUserViewCell
             cell = tableView.dequeueReusableCellWithIdentifier(activityUserCell, forIndexPath: indexPath) as! ActivityUserViewCell
             if let user = self.data?.users?[indexPath.row] {
-                cell.textLabel?.text = user.name
+                cell.nameLabel.text = user.name
+                
+                if
+                    let amountInCents = user.amount
+                    // should be fixed
+//                    ,
+//                    let currency = user.currency
+                {
+                    let currency = "eur"
+                    let amount = Double(amountInCents) / 100.0
+                    let numberFormatter             = NSNumberFormatter()
+                    numberFormatter.numberStyle     = NSNumberFormatterStyle.CurrencyStyle
+                    numberFormatter.currencyCode    = currency
+                    
+                    cell.amountLabel.text = numberFormatter.stringFromNumber(amount)
+                }
+                
             }
             return cell
         } else {
@@ -195,8 +242,12 @@ class ActivityViewController: UITableViewController {
                 numberFormatter.numberStyle     = NSNumberFormatterStyle.CurrencyStyle
                 numberFormatter.currencyCode    = currency
                 
-                cell.textLabel?.text = numberFormatter.stringFromNumber(amount)
+                cell.amountLabel.text = numberFormatter.stringFromNumber(amount)
             }
+            
+            cell.userLabel.text = self.data?.transactions?[indexPath.row].user
+            cell.nameLabel.text = self.data?.transactions?[indexPath.row].name
+            
             return cell
         }
     }
