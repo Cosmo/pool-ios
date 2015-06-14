@@ -110,23 +110,27 @@ class ActivityViewController: UITableViewController {
     }
     
     func addFriend(sender: AnyObject) {
-        let viewController = UINavigationController(rootViewController: InviteViewController())
-        self.presentViewController(viewController, animated: true, completion: nil)
+        if let id = _id {
+            let viewController = UINavigationController(rootViewController: InviteViewController(id: id))
+            self.presentViewController(viewController, animated: true, completion: nil)
+        }
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
+            return 1
+        case 1:
             if let count = self.data?.users?.count {
                 return count
             } else {
                 return 0
             }
-        case 1:
+        case 2:
             if let count = self.data?.transactions?.count {
                 return count
             } else {
@@ -140,8 +144,10 @@ class ActivityViewController: UITableViewController {
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
-            return "Friends"
+            return "Total"
         case 1:
+            return "Friends"
+        case 2:
             return "Transactions"
         default:
             return ""
@@ -150,6 +156,26 @@ class ActivityViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
+            // FIX THIS
+            var cell: ActivityUserViewCell
+            cell = tableView.dequeueReusableCellWithIdentifier(activityUserCell, forIndexPath: indexPath) as! ActivityUserViewCell
+            
+            if
+                let amountInCents = self.data?.total?.amount,
+                let currency = self.data?.total?.currency
+            {
+                let amount = Double(amountInCents) / 100.0
+                let numberFormatter             = NSNumberFormatter()
+                numberFormatter.numberStyle     = NSNumberFormatterStyle.CurrencyStyle
+                numberFormatter.currencyCode    = currency
+                
+                cell.textLabel?.text = numberFormatter.stringFromNumber(amount)
+            }
+            
+            
+            
+            return cell
+        } else if indexPath.section == 1 {
             var cell: ActivityUserViewCell
             cell = tableView.dequeueReusableCellWithIdentifier(activityUserCell, forIndexPath: indexPath) as! ActivityUserViewCell
             if let user = self.data?.users?[indexPath.row] {
