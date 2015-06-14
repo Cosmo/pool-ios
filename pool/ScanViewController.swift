@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Bolts
 
 class ScanViewController: UIViewController, GiniVisionDelegate {
     let sdk = (UIApplication.sharedApplication().delegate as! AppDelegate).giniSDK

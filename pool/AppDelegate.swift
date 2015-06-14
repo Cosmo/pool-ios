@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Gini_iOS_SDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
