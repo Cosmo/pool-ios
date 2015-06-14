@@ -66,7 +66,7 @@ class InviteViewController: UITableViewController, UISearchBarDelegate {
         if
             let name = self.data[indexPath.row].name
         {
-            Activity.invite(_id, name: name)?.method("POST").bodyParameters(["name": name]).success({ (data, response) -> () in
+            Activity.invite(_id)?.method("POST").bodyParameters(["name": name]).success({ (data, response) -> () in
                 self.dismissViewControllerAnimated(true, completion: nil)
             }).call()
         }
@@ -90,6 +90,7 @@ class InviteViewController: UITableViewController, UISearchBarDelegate {
                     User(data: ["name": "thomaspockrandt"]),
                     User(data: ["name": "donnieraycrisp"]),
                     User(data: ["name": "maccosmo"]),
+                    User(data: ["name": "kaimys"])
                 ]
                 self.tableView.reloadData()
             }

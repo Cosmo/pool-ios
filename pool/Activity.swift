@@ -37,7 +37,7 @@ struct Activity: Deserializable {
         return Api().path("/activities")
     }
     
-    static func invite(id: String, name: String) -> Api? {
-        return Api().path("/activities/\(id)/invite/\(name)")
+    static func invite(id: String) -> Api? {
+        return Api().path("/activities/\(id)/invite")
     }
 }
