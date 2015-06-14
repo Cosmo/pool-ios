@@ -40,7 +40,7 @@ class ActivityTransactionViewCell: UITableViewCell {
         
         self.nameLabel.frame        = CGRect(x: 15, y: 12, width: self.frame.size.width - 15 - 15, height: 16)
         self.userLabel.frame        = CGRect(x: 15, y: 12+15+12, width: self.frame.size.width - 15 - 15, height: 16)
-        self.amountLabel.frame        = CGRect(x: 15, y: 12+15+12, width: self.frame.size.width - 15 - 15, height: 16)
+        self.amountLabel.frame      = CGRect(x: 15, y: 12+15+12, width: self.frame.size.width - 15 - 15, height: 16)
     }
 }
 
