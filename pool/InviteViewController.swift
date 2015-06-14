@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AFNetworking
 
 class InviteViewController: UITableViewController, UISearchBarDelegate {
     var data: [User] = []
@@ -30,7 +31,7 @@ class InviteViewController: UITableViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
+        self.tableView.registerClass(InviteUserViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
         
         searchBar.delegate          = self
         searchBar.showsCancelButton = true
@@ -54,10 +55,14 @@ class InviteViewController: UITableViewController, UISearchBarDelegate {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! InviteUserViewCell
         
         let cellData = self.data[indexPath.row]
-        cell.textLabel?.text = cellData.name
+//        cell.textLabel?.text = cellData.name
+        cell.photoImageView.setImageWithURL(
+            NSURL(string: "https://twitter.com/\(cellData.name)/profile_image?size=normal")
+        )
+        cell.titleLabel.text = cellData.name
         
         return cell
     }
