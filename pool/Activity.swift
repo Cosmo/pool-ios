@@ -14,6 +14,7 @@ struct Activity: Deserializable {
     var transactions: [Transaction]?
     var master:       User?
     var users:        [User]?
+    var total:        Total?
     
     init(data: [String: AnyObject]) {
         id            <-- data["_id"]
@@ -21,6 +22,7 @@ struct Activity: Deserializable {
         transactions  <-- data["transactions"]
         users         <-- data["users"]
         master        <-- data["master"]
+        total         <-- data["total"]
     }
     
     static func all() -> Api? {
@@ -34,5 +36,8 @@ struct Activity: Deserializable {
     static func new() -> Api? {
         return Api().path("/activities")
     }
-
+    
+    static func invite(id: String, name: String) -> Api? {
+        return Api().path("/activities/\(id)/invite/\(name)")
+    }
 }
