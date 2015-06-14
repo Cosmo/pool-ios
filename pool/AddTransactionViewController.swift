@@ -120,7 +120,12 @@ class AddTransactionViewController: XLFormViewController, GiniVisionDelegate {
                                 
                                 if (key as! String) == "amountToPay" {
                                     if let _value = value as? GINIExtraction {
-                                        _amountField.value = _value.value
+                                        let matches = _value.value.matchesOf(/"\\d")
+                                        let extractedAmount = "".join(matches)
+                                        
+                                        println("extractedAmount: \(extractedAmount)")
+                                        
+                                        _amountField.value = extractedAmount
                                     }
                                 }
                             }
