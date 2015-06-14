@@ -28,6 +28,7 @@
 		451C39C41B2CDCBF00391D7E /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C39C01B2CDCBF00391D7E /* Transaction.swift */; };
 		451C39C51B2CDCBF00391D7E /* Total.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C39C11B2CDCBF00391D7E /* Total.swift */; };
 		45792C5C1B2D62690035F522 /* AddActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45792C5B1B2D62690035F522 /* AddActivityViewController.swift */; };
+		45792C5E1B2D7A6C0035F522 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45792C5D1B2D7A6C0035F522 /* File.swift */; };
 		99CF75A2ED61C0D4B61429AC /* Pods_pool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA6388233AA6100AF76D2756 /* Pods_pool.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		E98A987E1B2CF2A20068DEDD /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98A987D1B2CF2A20068DEDD /* ScanViewController.swift */; };
 		E98A98801B2CF2D00068DEDD /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E98A987F1B2CF2D00068DEDD /* CoreMedia.framework */; };
@@ -75,6 +76,7 @@
 		451C39C01B2CDCBF00391D7E /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		451C39C11B2CDCBF00391D7E /* Total.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Total.swift; sourceTree = "<group>"; };
 		45792C5B1B2D62690035F522 /* AddActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddActivityViewController.swift; sourceTree = "<group>"; };
+		45792C5D1B2D7A6C0035F522 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		781D44B46D49EED55A67C7A0 /* Pods-pool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pool.release.xcconfig"; path = "Pods/Target Support Files/Pods-pool/Pods-pool.release.xcconfig"; sourceTree = "<group>"; };
 		B10E80851AE0285A3614D3D8 /* Pods-pool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pool/Pods-pool.debug.xcconfig"; sourceTree = "<group>"; };
 		E98A987D1B2CF2A20068DEDD /* ScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				451C39A11B2CBA2400391D7E /* HTTPRequest.swift */,
 				451C39A21B2CBA2400391D7E /* JSONHelper.swift */,
 				451C39A31B2CBA2400391D7E /* RequestHelper.swift */,
+				45792C5D1B2D7A6C0035F522 /* File.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -458,6 +461,7 @@
 				451C39B61B2CC69D00391D7E /* ActivityViewCell.swift in Sources */,
 				451C39AA1B2CC11900391D7E /* InitialViewController.swift in Sources */,
 				451C39B81B2CC6CD00391D7E /* InviteUserViewCell.swift in Sources */,
+				45792C5E1B2D7A6C0035F522 /* File.swift in Sources */,
 				451C39B01B2CC46400391D7E /* ActivityViewController.swift in Sources */,
 				451C39A61B2CBA2400391D7E /* RequestHelper.swift in Sources */,
 				451C39C31B2CDCBF00391D7E /* User.swift in Sources */,

@@ -35,13 +35,22 @@ class AddActivityViewController: XLFormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Add Transaction"
+        self.title = "New Activity"
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "saveTransaction:")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "saveActivity:")
     }
     
-    func saveTransaction(sender: AnyObject) {
+    func saveActivity(sender: AnyObject) {
         println(self.httpParameters())
-        self.dismissViewControllerAnimated(true, completion: nil)
+        
+        if let name = self.httpParameters()["name"] as? String {
+            let body = [
+                "name": name
+            ]
+            
+            Activity.new()?.bodyParameters(body).method("POST").success({ (data, response) -> () in
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }).call()
+        }
     }
 }

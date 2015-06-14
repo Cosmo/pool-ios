@@ -18,7 +18,7 @@ class ActivitiesViewController: UITableViewController {
         
         self.tableView.registerClass(ActivityViewCell.self, forCellReuseIdentifier: activityCell)
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: self, action: "addActivity:")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "New", style: UIBarButtonItemStyle.Plain, target: self, action: "addActivity:")
         
         Activity.all()?.success({ (data, response) -> () in
             var stringData = NSString(data: data, encoding: NSUTF8StringEncoding)! as String
@@ -32,7 +32,8 @@ class ActivitiesViewController: UITableViewController {
     }
     
     func addActivity(sender: AnyObject) {
-        
+        let viewController = UINavigationController(rootViewController: AddActivityViewController())
+        self.presentViewController(viewController, animated: true, completion: nil)
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

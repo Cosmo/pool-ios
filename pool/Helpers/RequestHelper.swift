@@ -18,6 +18,6 @@ class Api: Request {
     
     override init() {
         super.init()
-        self.headers = ["x-header": "maccosmo"]
+        self.headers = ["x-header": "maccosmo", "Content-Type": "application/json"]
     }
 }

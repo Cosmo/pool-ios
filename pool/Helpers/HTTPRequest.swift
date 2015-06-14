@@ -200,8 +200,14 @@ class Request {
             } else {
                 if var parameters = self.bodyParameters
                 {
-                    let bodyString = self.stringFromQueryParameters(self.stringify(parameters))
-                    request.HTTPBody = bodyString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
+                    let bodyString = NSJSONSerialization.dataWithJSONObject(parameters, options: nil, error: nil)
+
+                    request.HTTPBody = bodyString
+                    
+                    println(bodyString)
+                    
+//                     let bodyString = self.stringFromQueryParameters(self.stringify(parameters))
+//                     request.HTTPBody = bodyString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
                 }
             }
             
