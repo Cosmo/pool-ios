@@ -10,11 +10,27 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
-
+    var giniSDK: GiniSDK!
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        if let path = NSBundle.mainBundle().pathForResource("Credentials", ofType: "plist") {
+            if let content = NSDictionary(contentsOfFile: path) {
+                let clientId        = content.valueForKey("clientId") as! String
+                let clientSecret    = content.valueForKey("clientSecret") as! String
+                let userEmailDomain = content.valueForKey("userEmailDomain") as! String
+                
+                self.giniSDK = GINISDKBuilder.anonymousUserWithClientID(clientId,
+                    clientSecret: clientSecret,
+                    userEmailDomain: userEmailDomain
+                ).build()
+            }
+        }
+        
+        self.giniSDK.sessionManager.getSession()
+        
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         if let window = self.window {
             window.rootViewController = UINavigationController(rootViewController: InitialViewController())
@@ -22,6 +38,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         return true
+    }
+    
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
+        return self.giniSDK.sessionManager.handleURL(url)
     }
 
     func applicationWillResignActive(application: UIApplication) {
