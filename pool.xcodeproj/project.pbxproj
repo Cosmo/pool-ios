@@ -27,6 +27,7 @@
 		451C39C31B2CDCBF00391D7E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C39BF1B2CDCBF00391D7E /* User.swift */; };
 		451C39C41B2CDCBF00391D7E /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C39C01B2CDCBF00391D7E /* Transaction.swift */; };
 		451C39C51B2CDCBF00391D7E /* Total.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C39C11B2CDCBF00391D7E /* Total.swift */; };
+		45792C5C1B2D62690035F522 /* AddActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45792C5B1B2D62690035F522 /* AddActivityViewController.swift */; };
 		99CF75A2ED61C0D4B61429AC /* Pods_pool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA6388233AA6100AF76D2756 /* Pods_pool.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		E98A987E1B2CF2A20068DEDD /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98A987D1B2CF2A20068DEDD /* ScanViewController.swift */; };
 		E98A98801B2CF2D00068DEDD /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E98A987F1B2CF2D00068DEDD /* CoreMedia.framework */; };
@@ -73,6 +74,7 @@
 		451C39BF1B2CDCBF00391D7E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		451C39C01B2CDCBF00391D7E /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		451C39C11B2CDCBF00391D7E /* Total.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Total.swift; sourceTree = "<group>"; };
+		45792C5B1B2D62690035F522 /* AddActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddActivityViewController.swift; sourceTree = "<group>"; };
 		781D44B46D49EED55A67C7A0 /* Pods-pool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pool.release.xcconfig"; path = "Pods/Target Support Files/Pods-pool/Pods-pool.release.xcconfig"; sourceTree = "<group>"; };
 		B10E80851AE0285A3614D3D8 /* Pods-pool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pool/Pods-pool.debug.xcconfig"; sourceTree = "<group>"; };
 		E98A987D1B2CF2A20068DEDD /* ScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
@@ -83,8 +85,8 @@
 		E98A98871B2CF4CB0068DEDD /* GiniVision.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GiniVision.bundle; path = Frameworks/GiniVisionFramework/GiniVision.bundle; sourceTree = "<group>"; };
 		E98A98881B2CF4CB0068DEDD /* GiniVision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GiniVision.framework; path = Frameworks/GiniVisionFramework/GiniVision.framework; sourceTree = "<group>"; };
 		E98A98891B2CF4CB0068DEDD /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = Frameworks/GiniVisionFramework/opencv2.framework; sourceTree = "<group>"; };
-		FA6388233AA6100AF76D2756 /* Pods_pool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9EC44AB1B2D457800FB62DA /* Credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Credentials.plist; sourceTree = "<group>"; };
+		FA6388233AA6100AF76D2756 /* Pods_pool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 		4511B2161B2D3EAA0060375C /* AddActivity */ = {
 			isa = PBXGroup;
 			children = (
+				45792C5B1B2D62690035F522 /* AddActivityViewController.swift */,
 			);
 			name = AddActivity;
 			sourceTree = "<group>";
@@ -451,6 +454,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				451C39BC1B2CC76E00391D7E /* LoginViewController.swift in Sources */,
+				45792C5C1B2D62690035F522 /* AddActivityViewController.swift in Sources */,
 				451C39B61B2CC69D00391D7E /* ActivityViewCell.swift in Sources */,
 				451C39AA1B2CC11900391D7E /* InitialViewController.swift in Sources */,
 				451C39B81B2CC6CD00391D7E /* InviteUserViewCell.swift in Sources */,

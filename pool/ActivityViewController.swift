@@ -84,8 +84,8 @@ class ActivityViewController: UITableViewController {
         self.tableView.registerClass(ActivityTransactionViewCell.self, forCellReuseIdentifier: activityTransactionCell)
         
         self.navigationItem.rightBarButtonItems = [
-                UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addTransaction:"),
-                UIBarButtonItem(title: "Invite", style: UIBarButtonItemStyle.Plain, target: self, action: "addFriend:")
+            UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addTransaction:"),
+            UIBarButtonItem(title: "Invite", style: UIBarButtonItemStyle.Plain, target: self, action: "addFriend:")
         ]
         
         if let id = _id {
@@ -100,7 +100,6 @@ class ActivityViewController: UITableViewController {
                 println("failure")
             }).call()
         }
-        
     }
     
     func addTransaction(sender: AnyObject) {
@@ -109,7 +108,8 @@ class ActivityViewController: UITableViewController {
     }
     
     func addFriend(sender: AnyObject) {
-        
+        let viewController = UINavigationController(rootViewController: InviteViewController())
+        self.presentViewController(viewController, animated: true, completion: nil)
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:pool/AddActivityViewController.swift">
+   </FileRef>
+   <FileRef
       location = "group:pool.xcodeproj">
    </FileRef>
    <FileRef
