@@ -13,13 +13,16 @@ class InviteViewController: UITableViewController, UISearchBarDelegate {
     var searchBar: UISearchBar
     var searchTimer: NSTimer
     
+    var _id: String
+    
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init() {
+    init(id: String) {
         self.searchBar = UISearchBar()
         self.searchTimer = NSTimer()
+        self._id = id
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -32,7 +35,6 @@ class InviteViewController: UITableViewController, UISearchBarDelegate {
         searchBar.delegate          = self
         searchBar.showsCancelButton = true
         searchBar.placeholder       = "Search friend …"
-        searchBar.tintColor         = UIColor.blackColor()
         
         self.navigationItem.titleView = searchBar
         searchBar.becomeFirstResponder()
@@ -61,7 +63,13 @@ class InviteViewController: UITableViewController, UISearchBarDelegate {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+        if
+            let name = self.data[indexPath.row].name
+        {
+            Activity.invite(_id, name: name)?.method("POST").bodyParameters(["name": name]).success({ (data, response) -> () in
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }).call()
+        }
     }
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
