@@ -7,3 +7,4 @@
 //
 
 #import <GiniVision/GiniVision.h>
+#include <Gini-iOS-SDK/GiniSDK.h>
