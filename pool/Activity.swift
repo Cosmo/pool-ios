@@ -19,6 +19,8 @@ struct Activity: Deserializable {
         id            <-- data["_id"]
         name          <-- data["name"]
         transactions  <-- data["transactions"]
+        users         <-- data["users"]
+        master        <-- data["master"]
     }
     
     static func all() -> Api? {
