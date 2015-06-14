@@ -26,6 +26,14 @@
 		451C39C31B2CDCBF00391D7E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C39BF1B2CDCBF00391D7E /* User.swift */; };
 		451C39C41B2CDCBF00391D7E /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C39C01B2CDCBF00391D7E /* Transaction.swift */; };
 		451C39C51B2CDCBF00391D7E /* Total.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C39C11B2CDCBF00391D7E /* Total.swift */; };
+		4BF7125A4BDDDE3D5FF20C12 /* libPods-pool.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9029C8AFB97110E3585244F /* libPods-pool.a */; };
+		E98A987E1B2CF2A20068DEDD /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98A987D1B2CF2A20068DEDD /* ScanViewController.swift */; };
+		E98A98801B2CF2D00068DEDD /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E98A987F1B2CF2D00068DEDD /* CoreMedia.framework */; };
+		E98A98821B2CF2DA0068DEDD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E98A98811B2CF2DA0068DEDD /* AVFoundation.framework */; };
+		E98A98841B2CF2E40068DEDD /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E98A98831B2CF2E40068DEDD /* AssetsLibrary.framework */; };
+		E98A988A1B2CF4CB0068DEDD /* GiniVision.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E98A98871B2CF4CB0068DEDD /* GiniVision.bundle */; };
+		E98A988B1B2CF4CB0068DEDD /* GiniVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E98A98881B2CF4CB0068DEDD /* GiniVision.framework */; };
+		E98A988C1B2CF4CC0068DEDD /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E98A98891B2CF4CB0068DEDD /* opencv2.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +70,17 @@
 		451C39BF1B2CDCBF00391D7E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		451C39C01B2CDCBF00391D7E /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		451C39C11B2CDCBF00391D7E /* Total.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Total.swift; sourceTree = "<group>"; };
+		781D44B46D49EED55A67C7A0 /* Pods-pool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pool.release.xcconfig"; path = "Pods/Target Support Files/Pods-pool/Pods-pool.release.xcconfig"; sourceTree = "<group>"; };
+		B10E80851AE0285A3614D3D8 /* Pods-pool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pool/Pods-pool.debug.xcconfig"; sourceTree = "<group>"; };
+		C9029C8AFB97110E3585244F /* libPods-pool.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-pool.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E98A987D1B2CF2A20068DEDD /* ScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
+		E98A987F1B2CF2D00068DEDD /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		E98A98811B2CF2DA0068DEDD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		E98A98831B2CF2E40068DEDD /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		E98A98861B2CF36D0068DEDD /* Pool-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Pool-Bridging-Header.h"; sourceTree = "<group>"; };
+		E98A98871B2CF4CB0068DEDD /* GiniVision.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GiniVision.bundle; path = Frameworks/GiniVisionFramework/GiniVision.bundle; sourceTree = "<group>"; };
+		E98A98881B2CF4CB0068DEDD /* GiniVision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GiniVision.framework; path = Frameworks/GiniVisionFramework/GiniVision.framework; sourceTree = "<group>"; };
+		E98A98891B2CF4CB0068DEDD /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = Frameworks/GiniVisionFramework/opencv2.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +88,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E98A98841B2CF2E40068DEDD /* AssetsLibrary.framework in Frameworks */,
+				E98A98821B2CF2DA0068DEDD /* AVFoundation.framework in Frameworks */,
+				E98A98801B2CF2D00068DEDD /* CoreMedia.framework in Frameworks */,
+				E98A988C1B2CF4CC0068DEDD /* opencv2.framework in Frameworks */,
+				E98A988B1B2CF4CB0068DEDD /* GiniVision.framework in Frameworks */,
+				4BF7125A4BDDDE3D5FF20C12 /* libPods-pool.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,12 +107,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		351550DF98F07281795992C6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B10E80851AE0285A3614D3D8 /* Pods-pool.debug.xcconfig */,
+				781D44B46D49EED55A67C7A0 /* Pods-pool.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		451C39721B2CB94500391D7E = {
 			isa = PBXGroup;
 			children = (
 				451C397D1B2CB94500391D7E /* pool */,
 				451C39931B2CB94500391D7E /* poolTests */,
 				451C397C1B2CB94500391D7E /* Products */,
+				351550DF98F07281795992C6 /* Pods */,
+				F4DBCEC6540A5CB4DD1D9D08 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,6 +143,7 @@
 				451C39A71B2CC0DF00391D7E /* ViewControllers */,
 				451C39BD1B2CDC8B00391D7E /* Models */,
 				451C39A01B2CBA2400391D7E /* Helpers */,
+				E98A98851B2CF2EB0068DEDD /* Frameworks */,
 				451C39871B2CB94500391D7E /* Images.xcassets */,
 				451C39891B2CB94500391D7E /* LaunchScreen.xib */,
 				451C397E1B2CB94500391D7E /* Supporting Files */,
@@ -117,6 +154,7 @@
 		451C397E1B2CB94500391D7E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E98A98861B2CF36D0068DEDD /* Pool-Bridging-Header.h */,
 				451C397F1B2CB94500391D7E /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -152,6 +190,7 @@
 		451C39A71B2CC0DF00391D7E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E98A987D1B2CF2A20068DEDD /* ScanViewController.swift */,
 				451C39AC1B2CC13800391D7E /* Activities */,
 				451C39AE1B2CC15000391D7E /* Invite */,
 				451C39AD1B2CC14200391D7E /* Activity */,
@@ -215,6 +254,27 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		E98A98851B2CF2EB0068DEDD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E98A98871B2CF4CB0068DEDD /* GiniVision.bundle */,
+				E98A98881B2CF4CB0068DEDD /* GiniVision.framework */,
+				E98A98891B2CF4CB0068DEDD /* opencv2.framework */,
+				E98A98831B2CF2E40068DEDD /* AssetsLibrary.framework */,
+				E98A98811B2CF2DA0068DEDD /* AVFoundation.framework */,
+				E98A987F1B2CF2D00068DEDD /* CoreMedia.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F4DBCEC6540A5CB4DD1D9D08 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C9029C8AFB97110E3585244F /* libPods-pool.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -222,9 +282,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 451C399A1B2CB94500391D7E /* Build configuration list for PBXNativeTarget "pool" */;
 			buildPhases = (
+				39BBC3AFE7CF0971E6BC701C /* Check Pods Manifest.lock */,
 				451C39771B2CB94500391D7E /* Sources */,
 				451C39781B2CB94500391D7E /* Frameworks */,
 				451C39791B2CB94500391D7E /* Resources */,
+				73E8CCBA4FE9D44330D03480 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -259,6 +321,7 @@
 		451C39731B2CB94500391D7E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = PoolParty;
 				TargetAttributes = {
@@ -295,6 +358,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E98A988A1B2CF4CB0068DEDD /* GiniVision.bundle in Resources */,
 				451C398B1B2CB94500391D7E /* LaunchScreen.xib in Resources */,
 				451C39881B2CB94500391D7E /* Images.xcassets in Resources */,
 			);
@@ -309,6 +373,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		39BBC3AFE7CF0971E6BC701C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		73E8CCBA4FE9D44330D03480 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-pool/Pods-pool-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		451C39771B2CB94500391D7E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -321,6 +418,7 @@
 				451C39B01B2CC46400391D7E /* ActivityViewController.swift in Sources */,
 				451C39A61B2CBA2400391D7E /* RequestHelper.swift in Sources */,
 				451C39C31B2CDCBF00391D7E /* User.swift in Sources */,
+				E98A987E1B2CF2A20068DEDD /* ScanViewController.swift in Sources */,
 				451C39B41B2CC57700391D7E /* InviteViewController.swift in Sources */,
 				451C39B21B2CC4EF00391D7E /* ActivitiesViewController.swift in Sources */,
 				451C39A41B2CBA2400391D7E /* HTTPRequest.swift in Sources */,
@@ -402,7 +500,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-l\"stdc++\"";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -440,7 +540,9 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-l\"stdc++\"";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -448,21 +550,33 @@
 		};
 		451C399B1B2CB94500391D7E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B10E80851AE0285A3614D3D8 /* Pods-pool.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/pool/Frameworks/GiniVisionFramework",
+				);
 				INFOPLIST_FILE = pool/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "pool/Pool-Bridging-Header.h";
 			};
 			name = Debug;
 		};
 		451C399C1B2CB94500391D7E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 781D44B46D49EED55A67C7A0 /* Pods-pool.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/pool/Frameworks/GiniVisionFramework",
+				);
 				INFOPLIST_FILE = pool/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "pool/Pool-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -519,6 +633,7 @@
 				451C399C1B2CB94500391D7E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		451C399D1B2CB94500391D7E /* Build configuration list for PBXNativeTarget "poolTests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +642,7 @@
 				451C399F1B2CB94500391D7E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

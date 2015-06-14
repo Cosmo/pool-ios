@@ -1,0 +1,22 @@
+PODS:
+  - Bolts (1.1.0)
+  - Gini-iOS-SDK (0.0.1):
+    - Bolts (= 1.1.0)
+
+DEPENDENCIES:
+  - Gini-iOS-SDK (from `https://github.com/gini/gini-sdk-ios.git`)
+
+EXTERNAL SOURCES:
+  Gini-iOS-SDK:
+    :git: https://github.com/gini/gini-sdk-ios.git
+
+CHECKOUT OPTIONS:
+  Gini-iOS-SDK:
+    :commit: 86948d19a1181fea652a1ab853747aeaa3d41004
+    :git: https://github.com/gini/gini-sdk-ios.git
+
+SPEC CHECKSUMS:
+  Bolts: cbf2e714ee805a2a2c1fced24c6e3aae9fbc396e
+  Gini-iOS-SDK: b9724c7772fb93517c962dfa631ffe5c0eadb2e9
+
+COCOAPODS: 0.37.2
