@@ -8,8 +8,13 @@
 
 import UIKit
 import XLForm
+import Bolts
+import Gini_iOS_SDK
 
-class AddTransactionViewController: XLFormViewController {
+class AddTransactionViewController: XLFormViewController, GiniVisionDelegate {
+    let gini = (UIApplication.sharedApplication().delegate as! AppDelegate).giniSDK
+    var amountField: XLFormRowDescriptor?
+    
     init() {
         super.init(nibName: nil, bundle: nil)
         
@@ -25,8 +30,8 @@ class AddTransactionViewController: XLFormViewController {
         row = XLFormRowDescriptor(tag: "name", rowType: XLFormRowDescriptorTypeName, title: "Name")
         section.addFormRow(row)
         
-        row = XLFormRowDescriptor(tag: "amount", rowType: XLFormRowDescriptorTypeNumber, title: "Amount")
-        section.addFormRow(row)
+        self.amountField = XLFormRowDescriptor(tag: "amount", rowType: XLFormRowDescriptorTypeNumber, title: "Amount")
+        section.addFormRow(amountField)
         
         row = XLFormRowDescriptor(tag: "fee", rowType: XLFormRowDescriptorTypeNumber, title: "Tip or Fee")
         section.addFormRow(row)
@@ -44,11 +49,67 @@ class AddTransactionViewController: XLFormViewController {
         self.title = "Add Transaction"
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "saveTransaction:")
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Camera, target: self, action: "scanInvoice:")
+        
+        self.gini.sessionManager.getSession()
+    }
+    
+    func scanInvoice(button: UIBarButtonItem) {
+        println("scanInvoice:")
+        GiniVision.captureImageWithViewController(self, delegate: self)
     }
     
     func saveTransaction(sender: AnyObject) {
         println(self.httpParameters())
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    // gini delegates
+    func didScan(document: UIImage!, documentType docType: GINIDocumentType, uploadDelegate delegate: GINIVisionUploadDelegate!) {
+        println("didScan:")
+        
+        let manager = self.gini.documentTaskManager
+        self.gini.sessionManager.getSession().continueWithSuccessBlock { (task: BFTask!) -> AnyObject! in
+            println("didScan:task")
+            return manager.createDocumentWithFilename("new-document", fromImage: document)
+            }.continueWithSuccessBlock { (createTask: BFTask!) -> AnyObject! in
+                println("didScan:createTask")
+                let document: AnyObject! = createTask.result()
+                return document.extractions
+            }.continueWithSuccessBlock { (extractionsTask: BFTask!) -> AnyObject! in
+                println("didScan:extractionsTask")
+                let extractions: AnyObject! = extractionsTask.result()
+                
+                println("didScan:extractions: \(extractions)")
+                
+                dispatch_async(dispatch_get_main_queue(), {
+                    if let _amountField = self.amountField {
+                        if let extractions = extractions as? NSDictionary {
+                            for (key, value) in extractions {
+                                println("extraction key: \(key), value: \(value)")
+                                
+                                if (key as! String) == "amountToPay" {
+                                    if let _value = value as? GINIExtraction {
+                                        _amountField.value = _value.value
+                                    }
+                                }
+                            }
+                        }
+                        self.reloadFormRow(self.amountField)
+                    }
 
+                    delegate.didEndUpload()
+                })
+                
+                return nil
+        }
+    }
+    
+    func didScanOriginal(image: UIImage!) {
+        println("didScanOriginal")
+    }
+    
+    func didFinishCapturing(success: Bool) {
+        println("didFinishCapturing")
+    }
 }
