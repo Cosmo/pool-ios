@@ -103,8 +103,10 @@ class ActivityViewController: UITableViewController {
     }
     
     func addTransaction(sender: AnyObject) {
-        let viewController = UINavigationController(rootViewController: AddTransactionViewController())
-        self.presentViewController(viewController, animated: true, completion: nil)
+        if let id = _id {
+            let viewController = UINavigationController(rootViewController: AddTransactionViewController(id: id))
+            self.presentViewController(viewController, animated: true, completion: nil)
+        }
     }
     
     func addFriend(sender: AnyObject) {

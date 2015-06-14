@@ -14,8 +14,11 @@ import Gini_iOS_SDK
 class AddTransactionViewController: XLFormViewController, GiniVisionDelegate {
     let gini = (UIApplication.sharedApplication().delegate as! AppDelegate).giniSDK
     var amountField: XLFormRowDescriptor?
+    var _id: String
     
-    init() {
+    init(id: String) {
+        self._id = id
+        
         super.init(nibName: nil, bundle: nil)
         
         var form: XLFormDescriptor
@@ -61,7 +64,22 @@ class AddTransactionViewController: XLFormViewController, GiniVisionDelegate {
     
     func saveTransaction(sender: AnyObject) {
         println(self.httpParameters())
-        self.dismissViewControllerAnimated(true, completion: nil)
+        
+        if
+            let name = self.httpParameters()["name"] as? String,
+            let amount = self.httpParameters()["amount"] as? String,
+            let fee = self.httpParameters()["fee"] as? String
+        {
+            let body = [
+                "name":     name,
+                "amount":   amount,
+                "fee":      fee
+            ]
+            
+            Transaction.new(_id)?.bodyParameters(body).method("POST").success({ (data, response) -> () in
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }).call()
+        }
     }
     
     // gini delegates

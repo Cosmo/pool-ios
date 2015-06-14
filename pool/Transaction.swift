@@ -20,4 +20,8 @@ struct Transaction: Deserializable {
         currency  <-- data["currency"]
         user      <-- data["user"]
     }
+    
+    static func new(id: String) -> Api? {
+        return Api().path("/activities/\(id)/transactions")
+    }
 }
