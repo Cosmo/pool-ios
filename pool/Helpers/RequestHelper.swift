@@ -18,6 +18,12 @@ class Api: Request {
     
     override init() {
         super.init()
-        self.headers = ["x-header": "maccosmo", "Content-Type": "application/json"]
+        if var _userHandle = (UIApplication.sharedApplication().delegate as! AppDelegate).userHandle {
+            println("userHandle: \(_userHandle)")
+            self.headers = ["x-header": "\(_userHandle)", "Content-Type": "application/json"]
+        } else {
+            println("userHandle: maccosmo")
+            self.headers = ["x-header": "maccosmo", "Content-Type": "application/json"]
+        }
     }
 }

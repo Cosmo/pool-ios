@@ -9,6 +9,7 @@
 import UIKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
+    let userTextField = UITextField(frame: CGRectZero)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,7 +105,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         )
         
         // textfield: user
-        let userTextField = UITextField(frame: CGRectZero)
+        
         userTextField.setTranslatesAutoresizingMaskIntoConstraints(false)
         let userTextFieldPlaceholder = NSAttributedString(string: "USER", attributes: [NSForegroundColorAttributeName:UIColor.whiteColor()])
         userTextField.attributedPlaceholder         = userTextFieldPlaceholder
@@ -159,7 +160,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
 //        textField.resignFirstResponder()
         
-        if let _userHandle = textField.text {
+        if let _userHandle = self.userTextField.text {
             (UIApplication.sharedApplication().delegate as! AppDelegate).userHandle = _userHandle
         }
         
