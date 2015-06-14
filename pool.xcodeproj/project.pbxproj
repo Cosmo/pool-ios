@@ -30,7 +30,6 @@
 		45792C5C1B2D62690035F522 /* AddActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45792C5B1B2D62690035F522 /* AddActivityViewController.swift */; };
 		45792C5E1B2D7A6C0035F522 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45792C5D1B2D7A6C0035F522 /* File.swift */; };
 		99CF75A2ED61C0D4B61429AC /* Pods_pool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA6388233AA6100AF76D2756 /* Pods_pool.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		E98A987E1B2CF2A20068DEDD /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98A987D1B2CF2A20068DEDD /* ScanViewController.swift */; };
 		E98A98801B2CF2D00068DEDD /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E98A987F1B2CF2D00068DEDD /* CoreMedia.framework */; };
 		E98A98821B2CF2DA0068DEDD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E98A98811B2CF2DA0068DEDD /* AVFoundation.framework */; };
 		E98A98841B2CF2E40068DEDD /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E98A98831B2CF2E40068DEDD /* AssetsLibrary.framework */; };
@@ -79,7 +78,6 @@
 		45792C5D1B2D7A6C0035F522 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		781D44B46D49EED55A67C7A0 /* Pods-pool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pool.release.xcconfig"; path = "Pods/Target Support Files/Pods-pool/Pods-pool.release.xcconfig"; sourceTree = "<group>"; };
 		B10E80851AE0285A3614D3D8 /* Pods-pool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pool/Pods-pool.debug.xcconfig"; sourceTree = "<group>"; };
-		E98A987D1B2CF2A20068DEDD /* ScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
 		E98A987F1B2CF2D00068DEDD /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		E98A98811B2CF2DA0068DEDD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		E98A98831B2CF2E40068DEDD /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -218,7 +216,6 @@
 			children = (
 				4511B2171B2D3EE00060375C /* AddTransaction */,
 				4511B2161B2D3EAA0060375C /* AddActivity */,
-				E98A987D1B2CF2A20068DEDD /* ScanViewController.swift */,
 				451C39AC1B2CC13800391D7E /* Activities */,
 				451C39AE1B2CC15000391D7E /* Invite */,
 				451C39AD1B2CC14200391D7E /* Activity */,
@@ -465,7 +462,6 @@
 				451C39B01B2CC46400391D7E /* ActivityViewController.swift in Sources */,
 				451C39A61B2CBA2400391D7E /* RequestHelper.swift in Sources */,
 				451C39C31B2CDCBF00391D7E /* User.swift in Sources */,
-				E98A987E1B2CF2A20068DEDD /* ScanViewController.swift in Sources */,
 				451C39B41B2CC57700391D7E /* InviteViewController.swift in Sources */,
 				451C39B21B2CC4EF00391D7E /* ActivitiesViewController.swift in Sources */,
 				451C39A41B2CBA2400391D7E /* HTTPRequest.swift in Sources */,
