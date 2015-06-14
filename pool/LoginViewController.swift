@@ -158,7 +158,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
 //        textField.resignFirstResponder()
-        println("next view")
+        
+        if let _userHandle = textField.text {
+            (UIApplication.sharedApplication().delegate as! AppDelegate).userHandle = _userHandle
+        }
+        
+        self.navigationController?.pushViewController(ActivitiesViewController(), animated: true)
+        
         return true
     }
 }
