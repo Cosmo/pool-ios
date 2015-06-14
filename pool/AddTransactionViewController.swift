@@ -39,8 +39,25 @@ class AddTransactionViewController: XLFormViewController, GiniVisionDelegate {
         row = XLFormRowDescriptor(tag: "fee", rowType: XLFormRowDescriptorTypeNumber, title: "Tip or Fee")
         section.addFormRow(row)
         
-        row = XLFormRowDescriptor(tag: "currency", rowType: XLFormRowDescriptorTypeName, title: "Currency")
+//        row = XLFormRowDescriptor(tag: "currency", rowType: XLFormRowDescriptorTypeName, title: "Currency")
+//        section.addFormRow(row)
+        
+        row = XLFormRowDescriptor(tag: "currency", rowType: XLFormRowDescriptorTypeSelectorPush, title: "Currency")
+        row.selectorTitle = "Currency"
+        row.selectorOptions = [
+            XLFormOptionsObject(value: 0, displayText: "EUR"),
+            XLFormOptionsObject(value: 1, displayText: "USD"),
+            XLFormOptionsObject(value: 2, displayText: "TRY"),
+            XLFormOptionsObject(value: 3, displayText: "JPY"),
+            XLFormOptionsObject(value: 4, displayText: "GBP"),
+            XLFormOptionsObject(value: 5, displayText: "AUD"),
+            XLFormOptionsObject(value: 6, displayText: "CHF"),
+            XLFormOptionsObject(value: 7, displayText: "CAD"),
+            XLFormOptionsObject(value: 8, displayText: "MXN")
+        ]
+        row.value = []
         section.addFormRow(row)
+        
         
         self.form = form
     }
@@ -75,18 +92,33 @@ class AddTransactionViewController: XLFormViewController, GiniVisionDelegate {
     func saveTransaction(sender: AnyObject) {
         println(self.httpParameters())
         
+        let currencies = [
+            "eur",
+            "usd",
+            "try",
+            "jpy",
+            "gbp",
+            "aud",
+            "chf",
+            "cad",
+            "mxn"
+        ]
+        
         if
             let name = self.httpParameters()["name"] as? String,
             let amount = self.httpParameters()["amount"] as? Int,
             let fee = self.httpParameters()["fee"] as? Int,
-            let currency = self.httpParameters()["currency"] as? String
+            let currencyIndex = self.httpParameters()["currency"] as? Int
         {
             let body: [String: AnyObject] = [
                 "name":     name,
                 "amount":   amount,
                 "fee":      fee,
-                "currency": currency
+                "currency": currencies[currencyIndex]
             ]
+            
+            println("sending ...")
+            println(body)
             
             Transaction.new(_id)?.bodyParameters(body).method("POST").success({ (data, response) -> () in
                 self.dismissViewControllerAnimated(true, completion: nil)
