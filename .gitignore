@@ -1,6 +1,7 @@
 pool/Frameworks/GiniVisionFramework/**
 .DS_Store
 *.xcworkspace
+!pool.xcworkspace
 
 # Xcode
 #
