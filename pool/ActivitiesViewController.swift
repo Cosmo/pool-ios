@@ -19,6 +19,10 @@ class ActivitiesViewController: UITableViewController {
         self.tableView.registerClass(ActivityViewCell.self, forCellReuseIdentifier: activityCell)
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "New", style: UIBarButtonItemStyle.Plain, target: self, action: "addActivity:")
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         
         Activity.all()?.success({ (data, response) -> () in
             var stringData = NSString(data: data, encoding: NSUTF8StringEncoding)! as String

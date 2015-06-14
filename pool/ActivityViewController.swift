@@ -105,6 +105,10 @@ class ActivityViewController: UITableViewController {
             UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addTransaction:"),
             UIBarButtonItem(title: "Invite", style: UIBarButtonItemStyle.Plain, target: self, action: "addFriend:")
         ]
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
         
         if let id = _id {
             Activity.detail(id)?.success({ (data, response) -> () in
