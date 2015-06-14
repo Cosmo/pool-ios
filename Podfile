@@ -5,6 +5,7 @@ target 'pool' do
   use_frameworks!
   pod 'Gini-iOS-SDK', :git => "https://github.com/gini/gini-sdk-ios.git"
   pod 'XLForm'
+  pod 'AFNetworking'
 end
 
 target 'poolTests' do
