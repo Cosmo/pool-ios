@@ -37,7 +37,12 @@ class AddActivityViewController: XLFormViewController {
         
         self.title = "New Activity"
         
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Cancel, target: self, action: "cancelActivity:")
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "saveActivity:")
+    }
+    
+    func cancelActivity(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func saveActivity(sender: AnyObject) {

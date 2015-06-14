@@ -39,6 +39,9 @@ class AddTransactionViewController: XLFormViewController, GiniVisionDelegate {
         row = XLFormRowDescriptor(tag: "fee", rowType: XLFormRowDescriptorTypeNumber, title: "Tip or Fee")
         section.addFormRow(row)
         
+        row = XLFormRowDescriptor(tag: "currency", rowType: XLFormRowDescriptorTypeName, title: "Currency")
+        section.addFormRow(row)
+        
         self.form = form
     }
 
@@ -51,10 +54,17 @@ class AddTransactionViewController: XLFormViewController, GiniVisionDelegate {
         
         self.title = "Add Transaction"
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "saveTransaction:")
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Camera, target: self, action: "scanInvoice:")
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Cancel, target: self, action: "cancel:")
+        self.navigationItem.rightBarButtonItems = [
+            UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "saveTransaction:"),
+            UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Camera, target: self, action: "scanInvoice:")
+        ]
         
         self.gini.sessionManager.getSession()
+    }
+    
+    func cancel(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func scanInvoice(button: UIBarButtonItem) {
@@ -67,13 +77,15 @@ class AddTransactionViewController: XLFormViewController, GiniVisionDelegate {
         
         if
             let name = self.httpParameters()["name"] as? String,
-            let amount = self.httpParameters()["amount"] as? String,
-            let fee = self.httpParameters()["fee"] as? String
+            let amount = self.httpParameters()["amount"] as? Int,
+            let fee = self.httpParameters()["fee"] as? Int,
+            let currency = self.httpParameters()["currency"] as? String
         {
-            let body = [
+            let body: [String: AnyObject] = [
                 "name":     name,
                 "amount":   amount,
-                "fee":      fee
+                "fee":      fee,
+                "currency": currency
             ]
             
             Transaction.new(_id)?.bodyParameters(body).method("POST").success({ (data, response) -> () in
